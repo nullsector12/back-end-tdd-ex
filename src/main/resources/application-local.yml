@@ -1,7 +1,3 @@
-#back-end-tdd
-
-``` yaml
-
 server:
   port: 20000
 
