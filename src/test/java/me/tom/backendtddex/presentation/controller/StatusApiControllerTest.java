@@ -1,7 +1,6 @@
 package me.tom.backendtddex.presentation.controller;
 
 import me.tom.backendtddex.presentation.model.response.GenericResponse;
-import me.tom.backendtddex.presentation.model.response.ServerStatusResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

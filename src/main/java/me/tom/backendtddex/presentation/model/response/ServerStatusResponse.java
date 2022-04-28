@@ -22,4 +22,13 @@ public class ServerStatusResponse {
         this.version = EnvComponent.VERSION;
         this.timeStamp = LocalDateTime.now();
     }
+    public ServerStatusResponse(LocalDateTime timeStamp) {
+        this.name = EnvComponent.NAME;
+        this.version = EnvComponent.VERSION;
+        this.timeStamp = timeStamp;
+    }
+
+    public LocalDateTime fiveDaysLater() {
+        return this.timeStamp.plusDays(5);
+    }
 }
