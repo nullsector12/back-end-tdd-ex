@@ -17,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StatusApiControllerTest {
 
     public static final String TOM_API_V_0_1_STATUS_HEALTH = "/tom-api/v0.1/status/health";
+    public static final String TOM_API_V_0_1_STATUS_MEMORY_INFO = "/tom-api/v0.1/status/memory-info";
     @Autowired
     private TestRestTemplate testRestTemplate;
 
@@ -59,4 +60,17 @@ class StatusApiControllerTest {
         assertThat(data.get("timeStamp")).isNotBlank();
     }
 
+    @Test
+    @DisplayName("Health API 호출 - 서버상태 정상일 때 - 메모리 정보 응답확인")
+    void getMemoryInfo_whenServerIsValid_receiveOk() {
+        //  Given
+        //  When
+        var response = testRestTemplate.getForEntity(TOM_API_V_0_1_STATUS_MEMORY_INFO, GenericResponse.class);
+        Map<String, Object> data = (Map<String, Object>) response.getBody().getData();
+        //  Then
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(data.get("serverMaxMemory")).isNotNull();
+        assertThat(data.get("serverFreeMemory")).isNotNull();
+        assertThat(data.get("serverTotalMemory")).isNotNull();
+    }
 }
