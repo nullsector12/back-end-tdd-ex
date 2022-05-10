@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:mysql://localhost:43306/piece_sale?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=TRUE
+      jdbc-url: jdbc:mysql://localhost:23306/piece_sale?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=TRUE
       username: root
-      password: 3306
+      password: pw_mysql
 
       pool-name: piece-sale-command-local
       minimum-idle: 10 # performance first
